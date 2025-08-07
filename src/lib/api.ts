@@ -1,15 +1,15 @@
-import type { 
-  Retrospective, 
-  Note, 
-  CreateRetrospectiveRequest, 
-  CreateNoteRequest, 
-  UpdateNoteRequest 
+import type {
+  Retrospective,
+  Note,
+  CreateRetrospectiveRequest,
+  CreateNoteRequest,
+  UpdateNoteRequest
 } from '@/types/api';
 
 const API_BASE = '/api';
 
 // Get user from localStorage for API calls
-const getUserHeaders = () => {
+const getUserHeaders = (): Record<string, string> => {
   const savedUser = localStorage.getItem('aztro-user');
   if (savedUser) {
     try {
