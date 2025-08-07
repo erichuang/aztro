@@ -18,7 +18,7 @@ const db = await setupDatabase();
 
 // Middleware
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, '..')));
 
 // Create HTTP server
 const server = createServer(app);
@@ -32,7 +32,7 @@ setupRoutes(app, db, wsHandlers);
 
 // Serve React app for all non-API routes
 app.get('*', (_, res) => {
-  res.sendFile(path.join(__dirname, '../dist/index.html'));
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 server.listen(PORT, () => {

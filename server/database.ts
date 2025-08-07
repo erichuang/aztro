@@ -20,8 +20,7 @@ const defaultData: DatabaseSchema = {
 };
 
 export const setupDatabase = async () => {
-  const dbPath = path.join(__dirname, '../data/db.json');
-  const adapter = new JSONFile<DatabaseSchema>(dbPath);
+  const adapter = new JSONFile<DatabaseSchema>('/tmp/db.json');
   const db = new Low<DatabaseSchema>(adapter, defaultData);
 
   await db.read();

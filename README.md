@@ -102,8 +102,6 @@ aztro/
 │   ├── database.ts             # Database setup
 │   ├── routes.ts               # API routes
 │   └── websocket.ts            # WebSocket handlers
-├── data/                       # Database storage
-│   └── db.json                 # JSON database file
 ├── dist/                       # Built frontend files
 ├── package.json                # Dependencies and scripts
 ├── vite.config.ts              # Vite configuration
@@ -155,7 +153,7 @@ The application works out of the box with defaults. For production, you may want
 - `PORT` - Server port (default: 3001)
 
 ### Database
-The application uses LowDB with a JSON file for storage. The database file is created automatically at `data/db.json` and contains:
+The application uses LowDB with a JSON file for storage. The database file is created automatically at `/tmp/db.json` and contains:
 - Users
 - Retrospectives
 - Notes
